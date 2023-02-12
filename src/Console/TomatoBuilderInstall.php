@@ -1,6 +1,6 @@
 <?php
 
-namespace Tomatophp\TomatoBuilder\Console;
+namespace TomatoPHP\TomatoBuilder\Console;
 
 use Illuminate\Console\Command;
 use TomatoPHP\ConsoleHelpers\Traits\RunCommand;
