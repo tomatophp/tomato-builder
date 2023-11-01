@@ -3,6 +3,7 @@
 namespace TomatoPHP\TomatoBuilder;
 
 use Illuminate\Support\ServiceProvider;
+use TomatoPHP\TomatoBuilder\Views\Digram;
 
 
 class TomatoBuilderServiceProvider extends ServiceProvider
@@ -52,6 +53,8 @@ class TomatoBuilderServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        //you boot methods here
+       $this->loadViewComponentsAs('tomato', [
+           Digram::class
+       ]);
     }
 }
