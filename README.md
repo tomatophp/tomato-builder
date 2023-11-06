@@ -1,6 +1,6 @@
 # Tomato builder
 
-Drop & Drag page builder with tons of components of tailwind & vuejs
+Schema Digram Builder to convert digram to full dashboard and flutter apps CRUDs
 
 ## Installation
 
