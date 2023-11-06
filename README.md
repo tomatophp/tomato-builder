@@ -13,6 +13,39 @@ after install your package please run this command
 php artisan tomato-builder:install
 ```
 
+add node packages
+
+```bash
+yarn add @vue-flow/background @vue-flow/core @vue-flow/node-toolbar 
+```
+
+```bash
+yarn build
+```
+
+add this line to your app.js
+
+```js
+
+import TomatoDiagram from "../../vendor/tomatophp/tomato-builder/resources/js/components/TomatoDiagram.vue";
+
+
+createApp({
+    render: renderSpladeApp({ el })
+})
+    .use(SpladePlugin, {
+        max_keep_alive: 10,
+        transform_anchors: false,
+        progress_bar: true,
+    })
+    .component("TomatoDiagram", TomatoDiagram)
+    ...
+    .mount(el);
+
+```
+
+
+
 ## Publish Assets
 
 you can publish config file by use this command

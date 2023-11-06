@@ -3,6 +3,8 @@
 namespace TomatoPHP\TomatoBuilder;
 
 use Illuminate\Support\ServiceProvider;
+use TomatoPHP\TomatoAdmin\Facade\TomatoMenu;
+use TomatoPHP\TomatoAdmin\Services\Contracts\Menu;
 use TomatoPHP\TomatoBuilder\Views\Digram;
 
 
@@ -43,8 +45,13 @@ class TomatoBuilderServiceProvider extends ServiceProvider
 
         //Publish Lang
         $this->publishes([
-           __DIR__.'/../resources/lang' => app_path('lang/vendor/tomato-builder'),
+           __DIR__.'/../resources/lang' => base_path('lang/vendor/tomato-builder'),
         ], 'tomato-builder-lang');
+
+        //Publish Stubs
+        $this->publishes([
+            __DIR__.'/stubs' => base_path('stubs/vendor/tomato-builder'),
+        ], 'tomato-builder-stubs');
 
         //Register Routes
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
@@ -56,5 +63,13 @@ class TomatoBuilderServiceProvider extends ServiceProvider
        $this->loadViewComponentsAs('tomato', [
            Digram::class
        ]);
+
+        TomatoMenu::register([
+            Menu::make()
+                ->group(__('Builder'))
+                ->label(__('Builder'))
+                ->route("admin.builder.index")
+                ->icon("bx bx-square")
+        ]);
     }
 }
