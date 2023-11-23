@@ -1,6 +1,6 @@
 ![Screenshot](https://github.com/tomatophp/tomato-builder/blob/master/art/screenshot.png)
 
-# Tomato builder
+# Tomato Builder
 
 Schema Digram Builder to convert digram to full dashboard and flutter apps CRUDs
 
@@ -9,70 +9,6 @@ Schema Digram Builder to convert digram to full dashboard and flutter apps CRUDs
 ```bash
 composer require tomatophp/tomato-builder
 ```
-after install your package please run this command
-
-```bash
-php artisan tomato-builder:install
-```
-
-add node packages
-
-```bash
-yarn add @vue-flow/background @vue-flow/core @vue-flow/node-toolbar 
-```
-
-```bash
-yarn build
-```
-
-add this line to your app.js
-
-```js
-
-import TomatoDiagram from "../../vendor/tomatophp/tomato-builder/resources/js/components/TomatoDiagram.vue";
-
-
-createApp({
-    render: renderSpladeApp({ el })
-})
-    .use(SpladePlugin, {
-        max_keep_alive: 10,
-        transform_anchors: false,
-        progress_bar: true,
-    })
-    .component("TomatoDiagram", TomatoDiagram)
-    ...
-    .mount(el);
-
-```
-
-
-
-## Publish Assets
-
-you can publish config file by use this command
-
-```bash
-php artisan vendor:publish --tag="tomato-builder-config"
-```
-
-you can publish views file by use this command
-
-```bash
-php artisan vendor:publish --tag="tomato-builder-views"
-```
-
-you can publish languages file by use this command
-
-```bash
-php artisan vendor:publish --tag="tomato-builder-lang"
-```
-
-you can publish migrations file by use this command
-
-```bash
-php artisan vendor:publish --tag="tomato-builder-migrations"
-```
 
 ## Support
 
@@ -80,7 +16,7 @@ you can join our discord server to get support [TomatoPHP](https://discord.gg/VZ
 
 ## Docs
 
-you can check docs of this package on [Docs](https://docs.tomatophp.com/plugins/laravel-package-generator)
+you can check docs of this package on [Docs](https://docs.tomatophp.com/plugins/tomato-builder)
 
 ## Changelog
 
