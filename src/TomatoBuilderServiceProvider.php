@@ -66,7 +66,7 @@ class TomatoBuilderServiceProvider extends ServiceProvider
 
         TomatoMenu::register([
             Menu::make()
-                ->group(__('Builder'))
+                ->group(__('Tools'))
                 ->label(__('Builder'))
                 ->route("admin.builder.index")
                 ->icon("bx bx-square")
